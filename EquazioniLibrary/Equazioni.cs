@@ -20,9 +20,9 @@ namespace EquazioniLibrary
                     return false;
             }
         }
-        public static bool IsDegree2(double esponente)
+        public static bool IsDegree2(double esponente, double a)
         {
-            return esponente == 2;
+            return esponente == 2 && a != 0;
         }
         public static double Delta(double a, double b, double c)
         {
@@ -30,21 +30,22 @@ namespace EquazioniLibrary
             double quattro_per_a_per_c = 4 * a * c;
             return quadrato_b - quattro_per_a_per_c;
         }
-        public static double Soluzione1Eq2Grado(double a, double b, double c)
+        public static string SoluzioniEq2Grado(double a, double b, double c)
         {
             double delta = Delta(a, b, c);
-            double b2 = b * b;
-            double somma = b2 + Math.Sqrt(delta);
-            double x1 = somma / 2;
-            return x1;
+            double x1 = (-b + Math.Sqrt(delta)) / (2 * a);
+            double x2 = (-b - Math.Sqrt(delta)) / (2 * a);
+            if (IsDetermined(a) == false)
+                return "impossibile";
+            if (delta < 0)
+                return "impossibile";
+            return $"x1= {x1}; x2= {x2}";
         }
-        public static double Soluzione2Eq2Grado(double a, double b, double c)
+        public static string SoluzioneEq1Grado(double a, double b)
         {
-            double delta = Delta(a, b, c);
-            double b2 = b * b;
-            double somma = b2 - Math.Sqrt(delta);
-            double x2 = somma / 2;
-            return x2;
+            if (a == 0 && b == 0)
+                return "indeterminato";
+            if(a!=0 && )
         }
     }
 }

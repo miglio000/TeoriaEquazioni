@@ -49,7 +49,7 @@ namespace EquazioniLibrary.Test
         public void IsDegree2_1()
         {
             double x = 1, esponente = 1;
-            bool resp = Equazioni.IsDegree2(esponente);
+            bool resp = Equazioni.IsDegree2(esponente, x);
             bool risultato_aspettato = false;
             Assert.AreEqual(risultato_aspettato, resp);
         }
@@ -57,7 +57,7 @@ namespace EquazioniLibrary.Test
         public void IsDegree2_2()
         {
             double x = 1, esponente = 2;
-            bool resp = Equazioni.IsDegree2(esponente);
+            bool resp = Equazioni.IsDegree2(esponente, x);
             bool risultato_aspettato = true;
             Assert.AreEqual(risultato_aspettato, resp);
         }
@@ -89,10 +89,25 @@ namespace EquazioniLibrary.Test
         public void SoluzioniEquazione1()
         {
             double a = 1, b = 1, c = -1;
-            double x1 = Equazioni.Soluzione1Eq2Grado(a, b, c);
-            double x2 = Equazioni.Soluzione2Eq2Grado(a, b, c);
-            double x1_aspettato = 1.62;
-            double x2_aspettato = 0.62;
+            string resp = Equazioni.SoluzioniEq2Grado(a, b, c);
+            string risultato_aspettato = "x1= 0.6180339887498949; x2= -1.618033988749895";
+            Assert.AreEqual(risultato_aspettato, resp);
+        }
+        [TestMethod]
+        public void SoluzioniEquazione2()
+        {
+            double a = 2, b = 4, c = 2;
+            string resp = Equazioni.SoluzioniEq2Grado(a, b, c);
+            string risultato_aspettato = "x1= -1; x2= -1";
+            Assert.AreEqual(risultato_aspettato, resp);
+        }
+        [TestMethod]
+        public void SoluzioniEquazione3()
+        {
+            double a = 2, b = 1, c = 5;
+            string resp = Equazioni.SoluzioniEq2Grado(a, b, c);
+            string risultato_aspettato = "impossibile";
+            Assert.AreEqual(risultato_aspettato, resp);
         }
     }
 }
