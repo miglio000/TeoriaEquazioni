@@ -10,8 +10,8 @@ namespace EquazioniLibrary
         }
         public static bool IsInconstisted(double a, double b)
         {
-            if (a != 0)
-               return true;
+            if (IsDetermined(a) == true)
+                return true;
             else
             {
                 if (b == 0)
@@ -20,22 +20,20 @@ namespace EquazioniLibrary
                     return false;
             }
         }
-        public static bool IsDegree2(double esponente, double a)
+        public static bool IsDegree2(double a)
         {
-            return esponente == 2 && a != 0;
+            return IsDetermined(a);
         }
         public static double Delta(double a, double b, double c)
         {
-            double quadrato_b = b * b;
-            double quattro_per_a_per_c = 4 * a * c;
-            return quadrato_b - quattro_per_a_per_c;
+            return (b * b) - (4 * a * c);
         }
         public static string SoluzioniEq2Grado(double a, double b, double c)
         {
             double delta = Delta(a, b, c);
             double x1 = (-b + Math.Sqrt(delta)) / (2 * a);
             double x2 = (-b - Math.Sqrt(delta)) / (2 * a);
-            if (IsDetermined(a) == false)
+            if (IsDetermined(a) == true)
                 return "impossibile";
             if (delta < 0)
                 return "impossibile";
@@ -43,9 +41,16 @@ namespace EquazioniLibrary
         }
         public static string SoluzioneEq1Grado(double a, double b)
         {
+
             if (a == 0 && b == 0)
                 return "indeterminato";
-            if(a!=0 && b==0)
+            else if (IsInconstisted(a, b) == true)
+                return "impossibile";
+            else
+            {
+                double x = b / a;
+                return $"x= {x}";
+            }
         }
     }
 }
