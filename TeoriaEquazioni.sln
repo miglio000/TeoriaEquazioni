@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EquazioniLibrary.Test", "EquazioniLibrary.Test\EquazioniLibrary.Test.csproj", "{9F60D227-2580-42E8-8A54-4F0EF0943405}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EquazioniLibrary", "EquazioniLibrary\EquazioniLibrary.csproj", "{4B0D9ACA-C3ED-43BE-96F4-283FC74DAF89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EquazioniLibrary", "EquazioniLibrary\EquazioniLibrary.csproj", "{4B0D9ACA-C3ED-43BE-96F4-283FC74DAF89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleLibreriaEquazioni", "ConsoleLibreriaEquazioni\ConsoleLibreriaEquazioni.csproj", "{5CEE51CF-B4D4-42B5-B287-07759B52727A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{4B0D9ACA-C3ED-43BE-96F4-283FC74DAF89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B0D9ACA-C3ED-43BE-96F4-283FC74DAF89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B0D9ACA-C3ED-43BE-96F4-283FC74DAF89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CEE51CF-B4D4-42B5-B287-07759B52727A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CEE51CF-B4D4-42B5-B287-07759B52727A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CEE51CF-B4D4-42B5-B287-07759B52727A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CEE51CF-B4D4-42B5-B287-07759B52727A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

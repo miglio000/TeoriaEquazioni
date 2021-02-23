@@ -10,7 +10,7 @@ namespace EquazioniLibrary
         }
         public static bool IsInconstisted(double a, double b)
         {
-            if (IsDetermined(a) == true)
+            if (IsDetermined(a))
                 return true;
             else
             {
@@ -22,7 +22,7 @@ namespace EquazioniLibrary
         }
         public static bool IsDegree2(double a)
         {
-            return IsDetermined(a);
+            return a != 0;
         }
         public static double Delta(double a, double b, double c)
         {
@@ -33,9 +33,7 @@ namespace EquazioniLibrary
             double delta = Delta(a, b, c);
             double x1 = (-b + Math.Sqrt(delta)) / (2 * a);
             double x2 = (-b - Math.Sqrt(delta)) / (2 * a);
-            if (IsDetermined(a) == true)
-                return "impossibile";
-            if (delta < 0)
+            if (delta < 0 || !IsDegree2(a)) 
                 return "impossibile";
             return $"x1= {x1}; x2= {x2}";
         }
@@ -44,7 +42,7 @@ namespace EquazioniLibrary
 
             if (a == 0 && b == 0)
                 return "indeterminato";
-            else if (IsInconstisted(a, b) == true)
+            else if (a != 0 && b == 0)
                 return "impossibile";
             else
             {
